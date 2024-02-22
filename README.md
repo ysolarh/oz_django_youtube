@@ -53,4 +53,4 @@
 
 
 8. Chatting
-- User: FK (nickname)
+   - User: FK (nickname)

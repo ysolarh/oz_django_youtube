@@ -19,7 +19,8 @@ class CommandTests(SimpleTestCase):
     # def test_wait_for_db_delay(self, patched_getitem):
     @patch('time.sleep')
     def test_wait_for_db_delay(self, patched_sleep, patched_getitem):
-        patched_getitem.side_effect = [Psycopg2OpError] + [OperationalError] * 5 + [True]
+        patched_getitem.side_effect = ([Psycopg2OpError] +
+                                       [OperationalError] * 5 + [True])
         call_command('wait_for_db')
 
         self.assertEqual(patched_getitem.call_count, 7)

@@ -8,7 +8,7 @@ class UserTestCase(TestCase):
 
     def test_create_user(self):
         email = 'example@gm.com'
-        password = 'password'
+        password = 'asdfklasdfajsdkfjd'
 
         user = get_user_model().objects.create_user(
             email=email, password=password
@@ -20,7 +20,7 @@ class UserTestCase(TestCase):
 
     def test_create_superuser(self):
         email = 'example1@gm.com'
-        password = 'password'
+        password = 'dfsdkljfkljdskfjsasdf'
         super_user = get_user_model().objects.create_superuser(
             email=email, password=password
         )

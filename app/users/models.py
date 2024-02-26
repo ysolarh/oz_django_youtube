@@ -10,7 +10,7 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError('이메일 주소가 입력되지 않음')
 
-        user = self.model(email=email)
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)  # 비밀번호 해쉬화
         user.save(using=self._db)
         return user

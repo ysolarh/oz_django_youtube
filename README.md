@@ -65,3 +65,9 @@
     - 왜 커스텀 유저 모델을 사용하는가?
       - 장고의 유저 모델을 상속받아서 기존에 구현된 기능을 내가 직접 구현하지 않아도 되기 때문
       - 장고의 공식 문서에서 강력히 추천함
+- 3일차: Custom User Model
+  - (1) User Model 생성
+    - docker-compose run --rm app sh -c 'django-admin startapp users'
+  - (2) Teest Code를 작성
+  - (3) AbstractUserModel을 상속
+  - (4) Admin 세팅

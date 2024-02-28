@@ -7,7 +7,7 @@ class UserTestCase(TestCase):
     # 이메일과 패스워드 입력받고, 회원가입이 정상적으로 잘 이뤄졌는지 체크
 
     def test_create_user(self):
-        email = 'example@gm.com'
+        email = 'example@gmail.com'
         password = 'asdfklasdfajsdkfjd'
 
         user = get_user_model().objects.create_user(
@@ -19,7 +19,7 @@ class UserTestCase(TestCase):
         self.assertFalse(user.is_superuser)
 
     def test_create_superuser(self):
-        email = 'example1@gm.com'
+        email = 'example1@gmail.com'
         password = 'dfsdkljfkljdskfjsasdf'
         super_user = get_user_model().objects.create_superuser(
             email=email, password=password

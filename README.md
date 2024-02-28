@@ -22,7 +22,7 @@
     - User: FK
 
 
-3. Likes/Dislike
+3. Likes/Dislike (Reaction)
     - User: FK
     - Video: FK
     Video : Like/Dislike (1 : N)
@@ -71,3 +71,28 @@
   - (2) Teest Code를 작성
   - (3) AbstractUserModel을 상속
   - (4) Admin 세팅
+- 4일차: REST API -> Video 관련 API
+  (1)
+  - Common
+  - Videos
+  - Comments
+  - Reactions (like/dislike)
+  - Subscriptions
+  - Notifications
+  (2)
+  - 
+  (3) settings.py의 INSTALLED_APPS에 등록
+  (4) DB migration
+  
+  (5) Video API create
+  - VideoList
+  - api/v1/videios
+    - GET: 전체 비디오 목록 조회 => Video.objects.all() => 클라이언트에 전달
+    - POST: 새로운 비디오 생성
+    - DELETE, PUT: X
+  - VideoDetail
+  - api/v1/videos/{video_id}
+    - GET: 특정 비디오 상세 조회
+    - POST: X
+    - PUT: 특정 비디오 정보 업데이트(수정)
+    - DELETE: 특정 비디오 삭제

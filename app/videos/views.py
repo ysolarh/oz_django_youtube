@@ -1,4 +1,5 @@
-# from django.shortcuts import render
+# from django.shortcuts import get_object_or_404
+from rest_framework.exceptions import NotFound
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Video
@@ -14,11 +15,25 @@ class VideoList(APIView):
         serializer = VideoSerializer(videos, many=True)  # 쿼리셋이 2개 이상
         return Response(serializer.data)
 
-    def post(self, request):
-        serializer = VideoSerializer(data=request.data)
-        if serializer.is_valid():
-            video = serializer.save()
-            serializer = VideoSerializer(video)
-            return Response(serializer.data, status=201)
-        else:
-            return Response(serializer.errors)
+    # def post(self, request):
+    #     serializer = VideoSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         video = serializer.save()
+    #         serializer = VideoSerializer(video)
+    #         return Response(serializer.data, status=201)
+    #     else:
+    #         return Response(serializer.errors)
+
+
+class VideoDetail(APIView):
+    def get_object(self, pk):
+        # return get_object_or_404(Video, pk=pk)
+        try:
+            return Video.objects.get(pk=pk)
+        except Video.DoesNotExist:
+            raise NotFound
+
+    def get(self, request, pk):
+        video = self.get_object(pk)
+        serializer = VideoSerializer(video)
+        return Response(serializer.data)

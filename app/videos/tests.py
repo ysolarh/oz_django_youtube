@@ -1,14 +1,11 @@
-from http import client
-
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 from users.models import User
 
 from .models import Video
-import pdb  # 미션: pdb를 사용해서 아래의 테스트 코드를 디버깅하시오.
+# import pdb  # 미션: pdb를 사용해서 아래의 테스트 코드를 디버깅하시오.
 
 
 class VideosAPITestCase(APITestCase):
@@ -52,11 +49,13 @@ class VideosAPITestCase(APITestCase):
             'category': 'test category',
             'thumbnail': 'http://test.com',
             'video_uploaded_url': 'http://test.com',
-            'video_file': SimpleUploadedFile('file.mp4', b"file_content", content_type="video/mp4"),
+            'video_file': SimpleUploadedFile(
+                'file.mp4', b"file_content", content_type="video/mp4"
+            ),
             'user': self.user.pk  # 1
         }
         res = self.client.post(url, data)
-        pdb.set_trace()
+        # pdb.set_trace()
 
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)
 
@@ -71,7 +70,9 @@ class VideosAPITestCase(APITestCase):
             'category': 'test category',
             'thumbnail': 'http://test.com',
             'video_uploaded_url': 'http://test.com',
-            'video_file': SimpleUploadedFile('file.mp4', b"file_content", content_type="video/mp4"),
+            'video_file': SimpleUploadedFile(
+                'file.mp4', b"file_content", content_type="video/mp4"
+            ),
             'user': self.user.pk
         }
 

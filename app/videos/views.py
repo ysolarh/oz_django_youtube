@@ -23,11 +23,17 @@ class VideoList(APIView):
 
             if serializer.is_valid():
                 serializer.save(user=request.user)
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+                return Response(
+                    serializer.data, status=status.HTTP_201_CREATED
+                )
+            return Response(
+                serializer.errors, status=status.HTTP_400_BAD_REQUEST
+            )
 
         except Exception as e:
-            return Response({'msg': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'msg': str(e)}, status=status.HTTP_400_BAD_REQUEST
+            )
 
 
 class VideoDetail(APIView):
@@ -54,7 +60,9 @@ class VideoDetail(APIView):
             serializer.save()
             return Response(serializer.data)
         except Exception as e:
-            return Response({'msg': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                {'msg': str(e)}, status=status.HTTP_400_BAD_REQUEST
+            )
 
     def delete(self, request, pk):
         video = self.get_object(pk)

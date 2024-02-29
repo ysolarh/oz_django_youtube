@@ -71,17 +71,17 @@
   - (2) Teest Code를 작성
   - (3) AbstractUserModel을 상속
   - (4) Admin 세팅
-- 4일차: REST API -> Video 관련 API
+- 4일차: REST API -> Video 관련 API  
   (1)
   - Common
   - Videos
   - Comments
   - Reactions (like/dislike)
   - Subscriptions
-  - Notifications
+  - Notifications  
   (2)
   - 
-  (3) settings.py의 INSTALLED_APPS에 등록
+  (3) settings.py의 INSTALLED_APPS에 등록  
   (4) DB migration
   
   (5) Video API create
@@ -96,3 +96,17 @@
     - POST: X
     - PUT: 특정 비디오 정보 업데이트(수정)
     - DELETE: 특정 비디오 삭제
+  (6) Subscription API
+    - 특정 유저를 구독한 유저 리스트
+    - 유저가 구독한 구독 리스트
+    - post: 구독하기
+    - get: 구독리스트
+    - delete: 구독삭제
+    - 내가 나를 구독 -> X
+    - 이미 구독했는데 다시 구독 -> X
+    - 구독 여부 확인
+    - api/v1/subscriptions
+    - [POST]: 구독하기 버튼 클릭
+    - api/v1/subscriptions/{user_id}
+    - [DELETE]: 구독최소
+    - 

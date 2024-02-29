@@ -30,19 +30,28 @@ ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
-
-INSTALLED_APPS = [
+DJANGO_SYSTEM_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
+]
+
+CUSTOM_USER_APPS = [
     'users.apps.UsersConfig',
+    'videos.apps.VideosConfig',
+    'comments.apps.CommentsConfig',
+    'reactions.apps.ReactionsConfig',
+    'subscriptions.apps.SubscriptionsConfig',
+    'notifications.apps.NotificationsConfig',
+    'core',
     'rest_framework',
     'drf_spectacular',
-    'core'
 ]
+
+INSTALLED_APPS = CUSTOM_USER_APPS + DJANGO_SYSTEM_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

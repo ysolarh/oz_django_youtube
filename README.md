@@ -108,5 +108,5 @@
     - api/v1/subscriptions
     - [POST]: 구독하기 버튼 클릭
     - api/v1/subscriptions/{user_id}
-    - [DELETE]: 구독최소
-    - 
+    - [DELETE]: 구독취소
+     

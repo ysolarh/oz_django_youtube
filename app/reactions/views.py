@@ -1,6 +1,6 @@
-from rest_framework.status import ( \
+from rest_framework.status import (
     HTTP_200_OK,
-    HTTP_204_NO_CONTENT,
+    # HTTP_204_NO_CONTENT,
     HTTP_400_BAD_REQUEST,
     HTTP_201_CREATED
 )
@@ -40,7 +40,6 @@ class ReactionDetail(APIView):
                 return Response(serializer.data, status=HTTP_200_OK)
 
         return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
-
 
     def delete(self):
         pass

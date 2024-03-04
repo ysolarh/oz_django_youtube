@@ -1,4 +1,4 @@
-import pdb
+# import pdb
 
 from django.urls import reverse
 from rest_framework import status
@@ -14,7 +14,6 @@ class SubscriptionTestCase(APITestCase):
         self.user2 = User.objects.create_user(email='user2@gmail.com', password='password123')
         self.client.login(email='user@gmail.com', password='password123')
 
-
     # api/v1/subscriptions
     def test_sub_list_post(self):
         url = reverse('subs-list')
@@ -29,7 +28,6 @@ class SubscriptionTestCase(APITestCase):
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Subscription.objects.count(), 1)
         self.assertEqual(Subscription.objects.get().subscribed_to, self.user2)
-
 
     # api/v1/subscriptions/{user_id}
     def test_sub_detail_delete(self):

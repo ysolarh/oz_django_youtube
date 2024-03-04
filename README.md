@@ -106,7 +106,13 @@
     - 이미 구독했는데 다시 구독 -> X
     - 구독 여부 확인
     - api/v1/subscriptions
-    - [POST]: 구독하기 버튼 클릭
+        - [POST]: 구독하기 버튼 클릭
     - api/v1/subscriptions/{user_id}
-    - [DELETE]: 구독취소
-     
+        - [DELETE]: 구독취소
+  (7) Reaction API
+  - 영상에 좋아요, 싫어요 추가하는 기능
+  - api/v1/video/{video_id}/reaction
+
+  (8) Chatting - SocketIO
+
+  (9) Deployment

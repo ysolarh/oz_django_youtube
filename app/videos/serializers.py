@@ -4,6 +4,8 @@ from users.serializers import UserSerializer
 
 from comments.serializers import CommentSerializer
 
+from reactions.serializers import ReactionSerializer
+
 
 class VideoSerializer(ModelSerializer):
     # USER - VIDEO(FK)

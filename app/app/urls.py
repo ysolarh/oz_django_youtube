@@ -16,4 +16,5 @@ urlpatterns = [
          name='redoc'),
     path('api/v1/videos/', include('videos.urls')),
     path('api/v1/subs/', include('subscriptions.urls')),
+    path('api/v1/chat/', include('chat.urls'))
 ]

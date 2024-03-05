@@ -112,7 +112,18 @@
   (7) Reaction API
   - 영상에 좋아요, 싫어요 추가하는 기능
   - api/v1/video/{video_id}/reaction
+  - like/dislike count 두가지 방법
+    - Reaction Model
+    - Video Model
 
   (8) Chatting - SocketIO
-
+  - api/v1/chat/msg
+    - [POST] - 채팅 메시지 생성
+  - api/v1/chat/room
+    - [POST]: 채팅방 생성
+    - [GET]: 채팅방 조회
+  - api/v1/chat/room/{room_id}
+    - [GET]: 채팅방 조회
+  - wss: 127.0.0.1:8000/ws/chat/{room_id}
+    Django SocketIO - Channels Library (pip install channels)
   (9) Deployment

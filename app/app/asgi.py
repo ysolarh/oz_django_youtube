@@ -1,3 +1,4 @@
+# 비동기 처리:
 """
 ASGI config for app project.
 

@@ -23,8 +23,8 @@ class VideoManager(models.Manager):
             # dislikes_count = Count('reaction', filter=Q(reaction__reaction=Reaction.DISLIKE))
 
             # 이건 됨
-            likes_count = Count('reaction', filter=Q(reaction__reaction=1)),
-            dislikes_count = Count('reaction', filter=Q(reaction__reaction=-1))
+            likes_count=Count('reaction', filter=Q(reaction__reaction=1)),
+            dislikes_count=Count('reaction', filter=Q(reaction__reaction=-1))
             # likes_count = models.Count('reaction', filter=models.Q(reaction__reaction=1)),
             # dislikes_count = models.Count('reaction', filter=models.Q(reaction__reaction=-1))
         )

@@ -25,4 +25,3 @@ class ChatMessage(CommonModel):
 # Room:Message (1:N)
 # Room => Message, Message, Message (o)
 # Message => Room1, Room2, Room3 (x)
-

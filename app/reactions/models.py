@@ -30,7 +30,7 @@ class Reaction(CommonModel):
     @staticmethod
     def get_video_reaction(video):
         reactions = Reaction.objects.filter(video=video).aggregate(
-            likes_count = Count('pk', filter=Q(reaction=Reaction.LIKE)),
-            dislikes_count = Count('pk', filter=Q(reaction=Reaction.DISLIKE)),
+            likes_count=Count('pk', filter=Q(reaction=Reaction.LIKE)),
+            dislikes_count=Count('pk', filter=Q(reaction=Reaction.DISLIKE)),
         )
         return reactions

@@ -127,3 +127,7 @@
   - wss: 127.0.0.1:8000/ws/chat/{room_id}
     Django SocketIO - Channels Library (pip install channels)
   (9) Deployment
+  - IAM 유저 생성
+  - EC2 instance 생성 (Amazon Linux)
+  - EC2 SSH 접속 -> Finger Print
+  - AWS -> 배포

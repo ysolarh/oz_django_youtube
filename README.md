@@ -131,3 +131,4 @@
   - EC2 instance 생성 (Amazon Linux)
   - EC2 SSH 접속 -> Finger Print
   - AWS -> 배포
+    - git, docker-compose 설치 & build

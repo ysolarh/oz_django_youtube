@@ -7,6 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
+COPY ./scripts /scripts
 
 WORKDIR /app
 EXPOSE 8000
@@ -27,7 +28,7 @@ RUN python -m venv /py && \
     adduser \
         --disabled-password \
         --no-create-home \
-        django-user; \
+        django-user && \
     mkdir -p /vol/web && \
     chown -R django-user:django-user /vol/ && \
     chmod -R 755 /vol/web && \
